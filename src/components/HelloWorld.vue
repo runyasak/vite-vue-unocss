@@ -1,52 +1,35 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <div h-full text-center flex select-none all:transition-400>
+    <div ma>
+      <div
+        text-5xl
+        fw100
+        animate-bounce-alt
+        animate-count-infinite
+        animate-1s
+        text-gray-400
+      >
+        {{ msg }}
+      </div>
+      <div text-lg fw300 text-gray-400 m1>
+        The instant on-demand Atomic CSS engine.
+      </div>
+      <div m2 flex justify-center text-2xl text-lg hover="op80">
+        <a
+          i-carbon-logo-github
+          text-inherit
+          text-gray-400
+          href="https://github.com/antfu/unocss"
+          target="_blank"
+        ></a>
+      </div>
+    </div>
+  </div>
+  <div absolute bottom-5 right-0 left-0 text-center text-lg text-gray-400 fw300>
+    on-demand · instant · fully customizable
+  </div>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
-}
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
-</style>
+<script setup lang="ts">
+defineProps<{ msg: string }>()
+</script>
